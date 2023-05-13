@@ -1,0 +1,27 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+
+   
+<center>
+    <div class="container-fluid mt-5 " style="border-radius: 10px; " id="bgi">
+        <form action="{% url 'addpdb' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+<h1>Add Product</h1>
+<input type="text" name="name" placeholder="Add Product" class="form-control"><br>
+<input type="text" name="desc" placeholder="Description" class="form-control"><br>
+
+<input type="number" name="price" placeholder="Price" class="form-control"><br>
+<input type="file" name="image"  class="form-control" accept="image/*" ><br>
+<select name="opt" class="form-control" id="">
+    {% for d in p %}
+    <option value="{{d.id}}" >{{d.c_name}}</option>
+    {% endfor %}
+</select>
+
+<button type="submit" style="width: 200px;" class="btn btn-warning">SAVE</button><br>
+</form>
+</div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+{% block content %}
+
+
+   
+<center>
+    <div class="container-fluid mt-5 " style="border-radius: 10px; " id="bgi">
+        <form action="{% url 'addcdb' %}" method="post">
+            {% csrf_token %}
+<h1>Add category</h1>
+<input type="text" name="c_name" placeholder="Category" class="form-control"><br>
+<button type="submit" style="width: 200px;" class="btn btn-warning">SAVE</button><br>
+</div>
+</center>
+
+{% endblock %}
